@@ -6,3 +6,4 @@ log.html
 binding.gyp
 test_wild/
 build/
+.direnv

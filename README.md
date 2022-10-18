@@ -1,5 +1,10 @@
 # ReScript grammar for Tree-sitter
 
+This reposity is a fork of https://github.com/nkrkv/tree-sitter-rescript. That repo doesn't commit the generated tree-sitter code, which some projects need. This repo should be the same as the original, only with that generated code committed.
+
+## About
+
+
 This repository contains a parser definition of the [ReScript](https://rescript-lang.org/) language for the [Tree-sitter](https://tree-sitter.github.io/tree-sitter/) parser generator tool.
 
 Athough Tree-sitter has many applications, the main intent of this parser is powering the [`nvim-treesitter-rescript`](https://github.com/nkrkv/nvim-tree-sitter-rescript/) NeoVim plugin which may be used to improve development experience in the NeoVim + ReScript combo.
