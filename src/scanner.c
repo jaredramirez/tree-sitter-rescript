@@ -131,7 +131,7 @@ bool tree_sitter_rescript_external_scanner_scan(
     const bool* valid_symbols
     ) {
   ScannerState* state = (ScannerState*)payload;
-  const in_string = state->in_quotes || state->in_backticks;
+  const bool in_string = state->in_quotes || state->in_backticks;
 
   if (valid_symbols[TEMPLATE_CHARS]) {
     lexer->result_symbol = TEMPLATE_CHARS;
@@ -181,7 +181,6 @@ bool tree_sitter_rescript_external_scanner_scan(
   // artificial token NEWLINE_AND_COMMENT was introduced. It has the same semantics for
   // the AST as simple newline and the same highlighting as a usual comment.
   if (valid_symbols[NEWLINE] && lexer->lookahead == '\n') {
-    bool is_unnested = state->parens_nesting == 0;
     lexer->result_symbol = NEWLINE;
     lexer->advance(lexer, true);
     lexer->mark_end(lexer);
